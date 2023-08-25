@@ -11,7 +11,8 @@
   "license": "MIT",
   "devDependencies": {
     "onchange": "^7.1.0",
-    "prettier": "^3.0.2"
+    "prettier": "^3.0.2",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "nostr-tools": "^1.14.2",
