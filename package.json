@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "jpdauloto",
+  "name": "jpdauloto-data-collector",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,11 @@
   "author": "ka",
   "license": "MIT",
   "devDependencies": {
-    "onchange": "^7.1.0",
     "prettier": "^3.0.2",
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "luxon": "^3.4.1",
     "nostr-tools": "^1.14.2",
     "websocket-polyfill": "^0.0.3"
   }

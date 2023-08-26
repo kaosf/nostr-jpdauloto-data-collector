@@ -1,9 +1,6 @@
-# Nostrquiz (JP DAU Loto)
+# Nostrquiz (JP DAU Loto) Data Collector
 
 ```sh
-nvim nsec.txt # Input nsec1...
-chmod 600 nsec.txt
-
 nvim relays.txt # Input relay URLs
 # Example
 <<EOF
