@@ -32,13 +32,24 @@ const sub = pool.sub(relays, [
 ]);
 
 const predictDau = () => {
-  return 271;
+  const ret = parseInt(readFileSync("./prediction.txt", "utf-8").trim());
+  if (isNaN(ret)) {
+    console.log("Error! parse result is NaN.");
+    return -1;
+  }
+  return ret;
 };
 
 sub.on("event", (event) => {
   console.log(event);
   const replyId = event.id;
-  const content = `${predictDau()}`;
+  const prediction = predictDau();
+  if (prediction < 0) {
+    console.log(`Error! prediction: ${prediction}`);
+    return;
+  }
+
+  const content = `${prediction}`;
   const ev = {
     kind: 1,
     created_at: Math.floor(Date.now() / 1000),
@@ -53,8 +64,8 @@ sub.on("event", (event) => {
   ev.sig = getSignature(ev, privkey);
 
   try {
-    // pool.publish(relays, ev); // Comment out for safety now.
+    pool.publish(relays, ev);
   } catch {
-    // Do nothing
+    console.log("Something went wrong.");
   }
 });
