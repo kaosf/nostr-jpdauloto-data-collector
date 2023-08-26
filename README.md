@@ -1,5 +1,15 @@
 # Nostrquiz (JP DAU Loto) Data Collector
 
+[Raw results.txt Link](https://raw.githubusercontent.com/kaosf/nostr-jpdauloto-data-collector/main/results.txt)
+
+You can get data like that:
+
+```sh
+curl https://raw.githubusercontent.com/kaosf/nostr-jpdauloto-data-collector/main/results.txt
+```
+
+Preparation
+
 ```sh
 nvim relays.txt # Input relay URLs
 # Example
@@ -11,6 +21,8 @@ wss://another-relay.example.com
 wss://third-relay.example.com
 EOF
 ```
+
+Run
 
 ```sh
 asdf install
