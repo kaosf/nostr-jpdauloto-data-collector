@@ -2,6 +2,7 @@ import { SimplePool } from "nostr-tools";
 import "websocket-polyfill";
 import { readFileSync, appendFileSync } from "fs";
 import { DateTime } from "luxon";
+import { execSync } from "child_process";
 
 const relays = readFileSync("./relays.txt", "utf-8")
   .split("\n")
@@ -49,5 +50,12 @@ sub.on("event", (event) => {
       "./results.txt",
       `${event.id} ${event.created_at} ${date} ${num}\n`
     );
+    let stdout = null;
+    stdout = execSync("git add results.txt");
+    console.log(stdout.toString());
+    stdout = execSync('git commit -m "Update results.txt"');
+    console.log(stdout.toString());
+    stdout = execSync("git push");
+    console.log(stdout.toString());
   }
 });
