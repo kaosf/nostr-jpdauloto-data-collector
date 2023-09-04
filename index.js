@@ -20,7 +20,7 @@ const sub = pool.sub(relays, [
   {
     kinds: [1],
     authors: [kojiraPubkey],
-    since: now - 1 * 60 * 60,
+    since: now - 25 * 60 * 60,
   },
 ]);
 
