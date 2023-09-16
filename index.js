@@ -51,11 +51,7 @@ sub.on("event", (event) => {
       `${event.id} ${event.created_at} ${date} ${num}\n`
     );
     let stdout = null;
-    stdout = execSync("git add results.txt");
-    console.log(stdout.toString());
-    stdout = execSync('git commit -m "Update results.txt"');
-    console.log(stdout.toString());
-    stdout = execSync("git push");
+    stdout = execSync("bash update.sh");
     console.log(stdout.toString());
   }
 });

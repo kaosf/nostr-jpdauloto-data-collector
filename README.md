@@ -20,6 +20,8 @@ wss://another-relay.example.com
 # The line starting with # is ignored.
 wss://third-relay.example.com
 EOF
+
+cp update.sh.example update.sh
 ```
 
 Run
