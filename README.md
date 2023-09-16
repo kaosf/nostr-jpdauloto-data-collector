@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/kaosf/nostr-jpdauloto-data-collector/main
 Preparation
 
 ```sh
-nvim relays.txt # Input relay URLs
+nvim config/relays.txt # Input relay URLs
 # Example
 <<EOF
 wss://nostr.example.com

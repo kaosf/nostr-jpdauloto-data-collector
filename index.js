@@ -4,8 +4,8 @@ import { readFileSync, appendFileSync } from "fs";
 import { DateTime } from "luxon";
 import { execSync } from "child_process";
 
-const relays = readFileSync("./relays.txt", "utf-8")
-  .split("\n")
+const relays = readFileSync("./config/relays.txt", "utf-8")
+  .split(/\n|\r\n|\r/)
   .filter((x) => !x.match(/^#/))
   .filter((x) => !(x === ""));
 
