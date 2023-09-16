@@ -1,12 +1,6 @@
 # Nostrquiz (JP DAU Loto) Data Collector
 
-[Raw results.txt Link](https://raw.githubusercontent.com/kaosf/nostr-jpdauloto-data-collector/main/results.txt)
-
-You can get data like that:
-
-```sh
-curl https://raw.githubusercontent.com/kaosf/nostr-jpdauloto-data-collector/main/results.txt
-```
+[Raw results.txt Link (Stopped updating)](https://raw.githubusercontent.com/kaosf/nostr-jpdauloto-data-collector/main/results-archive.txt)
 
 Preparation
 
@@ -21,7 +15,8 @@ wss://another-relay.example.com
 wss://third-relay.example.com
 EOF
 
-cp update.sh.example update.sh
+cp data/update.sh.example data/update.sh
+nvim data/update.sh # Modify the script as you like
 ```
 
 Run

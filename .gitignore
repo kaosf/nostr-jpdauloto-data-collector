@@ -1,2 +1,4 @@
 /config/relays.txt
-/update.sh
+/data/*
+!/data/.keep
+!/data/update.sh.example

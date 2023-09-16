@@ -24,7 +24,7 @@ const sub = pool.sub(relays, [
   },
 ]);
 
-const logs = readFileSync("./results.txt", "utf-8")
+const logs = readFileSync("./data/results.txt", "utf-8")
   .split("\n")
   .filter((x) => !(x === ""))
   .map((x) => x.split(/\s+/));
@@ -47,11 +47,11 @@ sub.on("event", (event) => {
 
     console.log(`event.id: ${event.id} is recorded.`);
     appendFileSync(
-      "./results.txt",
+      "./data/results.txt",
       `${event.id} ${event.created_at} ${date} ${num}\n`
     );
     let stdout = null;
-    stdout = execSync("bash update.sh");
+    stdout = execSync("bash data/update.sh");
     console.log(stdout.toString());
   }
 });
