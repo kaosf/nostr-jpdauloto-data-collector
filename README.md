@@ -22,6 +22,16 @@ nvim data/update.sh # Modify the script as you like
 Run
 
 ```sh
+docker run -d \
+-v $PWD/config:/workspace/config \
+-v $PWD/data:/workspace/data \
+-u $UID \
+kaosf/nostr-jpdauloto-data-collector:latest
+```
+
+## Development
+
+```sh
 asdf install
 npm i
 node index.js
