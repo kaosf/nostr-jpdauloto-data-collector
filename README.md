@@ -23,7 +23,7 @@ Run
 
 ```sh
 docker run -d \
--v $PWD/config:/workspace/config \
+-v $PWD/config:/workspace/config:ro \
 -v $PWD/data:/workspace/data \
 -u $UID \
 kaosf/nostr-jpdauloto-data-collector:latest
