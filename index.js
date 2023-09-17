@@ -50,8 +50,11 @@ sub.on("event", (event) => {
       "./data/results.txt",
       `${event.id} ${event.created_at} ${date} ${num}\n`
     );
-    let stdout = null;
-    stdout = execSync("bash data/update.sh");
-    console.log(stdout.toString());
+    try {
+      const stdout = execSync("bash data/update.sh");
+      console.log(stdout.toString());
+    } catch (e) {
+      console.log(e.toString());
+    }
   }
 });
